@@ -13,8 +13,5 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterModule
   ],
-  exports: [
-    AccountsLayoutComponent
-  ]
 })
 export class BlocksModule { }

@@ -1,3 +1,43 @@
-<p>accounts-layout works!</p>
-
-<router-outlet></router-outlet>
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="/assets/templates/square_template/img/apple-touch-icon.png"
+/>
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+<link rel="manifest" href="img/site.webmanifest" />
+<link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+<meta
+  name="description"
+  content="This is Signin Page of Nomad Dashboard Website"
+/>
+<link rel="stylesheet" href="/assets/templates/square_template/css/app.css" />
+<div class="out">
+  <div class="page">
+    <div class="header js-header header_empty">
+      <div class="header__bg js-header-bg"></div>
+    </div>
+    <div class="page__wrapper">
+      <div class="entry">
+        <div class="entry__wrap">
+          <router-outlet></router-outlet>
+        </div>
+        <label class="switch switch_theme"
+          ><input class="switch__input js-switch-theme" type="checkbox" /><span
+            class="switch__in"
+            ><span class="switch__box"></span
+            ><span class="switch__icon"
+              ><svg class="icon icon-moon">
+                <use
+                  xlink:href="/assets/templates/square_template/img/sprite.svg#icon-moon"
+                ></use></svg><svg class="icon icon-sun">
+                <use
+                  xlink:href="/assets/templates/square_template/img/sprite.svg#icon-sun"
+                ></use></svg></span></span
+        ></label>
+      </div>
+    </div>
+  </div>
+</div>
