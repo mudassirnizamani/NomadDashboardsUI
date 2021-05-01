@@ -35,11 +35,15 @@
               "node_modules/angular-bootstrap-md/assets/scss/bootstrap/bootstrap.scss",
               "node_modules/angular-bootstrap-md/assets/scss/mdb.scss",
               "node_modules/animate.css/animate.css",
+              "node_modules/ngx-toastr/toastr.css",
               "src/styles.scss"
             ],
             "scripts": [
               "node_modules/chart.js/dist/Chart.js",
-              "node_modules/hammerjs/hammer.min.js"
+              "node_modules/hammerjs/hammer.min.js",
+              "src/assets/templates/square_template/js/app.js",
+              "src/assets/templates/square_template/js/common.js",
+              "src/assets/templates/square_template/js/charts.js"
             ]
           },
           "configurations": {
@@ -78,6 +82,9 @@
             "browserTarget": "NomadDashboardsUI:build"
           },
           "configurations": {
+            "development": {
+              "browserTarget": "NomadDashboardsUI:build:development"
+            },
             "production": {
               "browserTarget": "NomadDashboardsUI:build:production"
             }
