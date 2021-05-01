@@ -683,7 +683,7 @@ body.dark .tooltipster-sidetip.tooltipster-shadow.tooltipster-shadow-customized 
 
 .bg-red { background: #FC5A5A; }
 
-.btn { min-width: 120px; height: 38px; padding-top: 1px; border-radius: 10px; font-family: 'Poppins', sans-serif; line-height: 1.5; font-size: 12px; font-weight: 600; -webkit-transition: all .25s; -o-transition: all .25s; transition: all .25s; }
+.btn { min-width: 120px; height: 38px; border-radius: 10px; font-family: 'Poppins', sans-serif; line-height: 1.5; font-size: 12px; font-weight: 600; -webkit-transition: all .25s; -o-transition: all .25s; transition: all .25s; }
 
 .btn__pic, .btn .icon, .btn__text { display: inline-block; vertical-align: middle; }
 
@@ -2169,7 +2169,7 @@ body.dark .checkbox__status { background: #292932; color: #D5D5DC; }
 
 .entry__wrap { position: relative; z-index: 2; max-width: 560px; width: 100%; }
 
-.entry__title { margin-bottom: 22px; text-align: center; font-family: 'Poppins', sans-serif; line-height: 1.5; font-size: 56px; line-height: 1.5; letter-spacing: 0.23px; font-weight: 700; color: #44444F; }
+.entry__title { margin-bottom: 22px; text-align: center; font-family: 'Poppins', sans-serif; line-height: 1.5; line-height: 1.5; letter-spacing: 0.23px; font-weight: 700; color: #44444F; }
 
 .entry__info { margin-bottom: 40px; text-align: center; font-size: 16px; line-height: 1.625; letter-spacing: .1px; color: #92929D; }
 

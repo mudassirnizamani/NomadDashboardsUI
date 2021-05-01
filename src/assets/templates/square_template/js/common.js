@@ -64,6 +64,18 @@ $(document).ready(function () {
     });
 })();
 
+function themeSwitch() {
+    var switchTheme = $('.js-switch-theme'),
+    body = $('body');
+switchTheme.on('change', function () {
+    if (!body.hasClass('dark')) {
+        body.addClass('dark');
+    } else {
+        body.removeClass('dark');
+    }
+});
+};
+
 // header search
 (function () {
     var header = $('.js-header'),
@@ -198,6 +210,20 @@ $(document).ready(function () {
         }
     });
 })();
+
+function activeField() {
+    $('.js-field-input').focusin(function () {
+        $(this).parents('.js-field').addClass('active');
+    });
+    $('.js-field-input').focusout(function () {
+        var _this = $(this),
+            field = _this.parents('.js-field'),
+            value = _this.val();
+        if (value == '') {
+            field.removeClass('active');
+        }
+    });
+}
 
 // accord
 (function () {
