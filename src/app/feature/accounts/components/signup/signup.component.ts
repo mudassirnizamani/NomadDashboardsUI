@@ -25,6 +25,10 @@ export class SignupComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    if (localStorage.getItem('token') != null) {
+      this.router.navigateByUrl('/admin')
+    }
+
     activeField();
 
     // Signup Form for Signup Page - Mudasir Ali
@@ -48,7 +52,6 @@ export class SignupComponent implements OnInit {
         email: new FormControl('', [
           Validators.required,
           Validators.email,
-          Validators.pattern('^.+@gmail.com$'),
         ]),
         phoneNumber: new FormControl(0, [Validators.pattern('^[0-9]*$')]),
         website: new FormControl('', [Validators.pattern(this.reg)]),
@@ -139,7 +142,7 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     if (this.SignupForm.invalid) {
-      this.toastr.error('Plz, fill the Fields Correctly !');
+      this.toastr.warning('Plz, fill the Fields Correctly !');
     } else {
       var model: Signup = {
         email: this.SignupForm.value.email,
@@ -181,7 +184,7 @@ export class SignupComponent implements OnInit {
           }
         },
         (err: any) => {
-          this.toastr.error('Something went wrong !');
+          this.toastr.error("Server didn't respond ", 'Signup Failed !');
         }
       );
     }

@@ -47,7 +47,7 @@ export class SigninComponent implements OnInit {
 
   onSubmit() {
     if (this.SigninForm.invalid) {
-      this.toastr.error('Plz, fill the Fields Correctly !');
+      this.toastr.warning('Plz, fill the Fields Correctly !');
     } else {
       var model: Signin = {
         UserName: this.SigninForm.value.userName,
@@ -70,7 +70,7 @@ export class SigninComponent implements OnInit {
           ) {
             this.toastr.error("Your Username doesn't exist", 'Signin Failed');
           } else {
-            this.toastr.error('Something went Wrong', 'Signin Failed');
+            this.toastr.error("Server didn't respond ", 'Signin Failed !');
           }
         }
       );

@@ -142,9 +142,6 @@
             <span *ngIf="Email.hasError('email')"
               >plz, Enter a Valid Email.
             </span>
-            <span *ngIf="Email.errors.pattern"
-              >Only Gmail Address is allowed</span
-            >
           </div>
         </div>
       </div>
@@ -289,7 +286,7 @@
 
   <div class="entry__fieldset">
     <h3 class="h3-responsive entry__title" style="text-align: left">
-      Compony Information
+      Company Information
     </h3>
     <div class="entry__row">
       <div class="entry__col">
@@ -409,12 +406,11 @@
     <button
       mdbBtn
       type="submit"
-      gradient="aqua"
-      class="entry__btn btn btn btn_big btn_blue"
+      class="entry__btn btn btn btn_big btn_wide btn_blue"
       rounded="true"
       mdbWavesEffect
     >
-      Get Started
+      Get Started <i class="fas fa-user-plus ml-1"></i>
     </button>
   </div>
 </form>
