@@ -1,0 +1,467 @@
+<div class="page2__container p-0">
+  <div class="profile profile_user">
+    <div
+      class="profile__bg"
+      style="
+        background-image: url('/assets/templates/square_template/img/bg-profile.jpg');
+      "
+    ></div>
+    <div class="profile__user">
+      <div class="profile__ava">
+        <img
+          class="profile__pic"
+          src="/assets/templates/square_template/img/ava-big.jpg"
+          alt=""
+        />
+      </div>
+      <div class="profile__details">
+        <span class="profile__title title"
+          >{{ userData.firstName }} {{ userData.lastName }}</span
+        ><span class="profile__login">{{ userData.email }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="page2__row">
+    <div class="page2__col page2__col_w35">
+      <div class="card1">
+        <div class="card1__head">
+          <div class="card1__category h5-responsive">Verification Details</div>
+        </div>
+        <div class="card1__body">
+          <div class="card1__list">
+            <div class="row user-detail-row my-3 justify-content-between">
+              <div class="col-5">
+                <label>Admin</label>
+              </div>
+              <div class="col-3">
+                <p class="text-success text-right"><i class="fas fa-check-circle"></i></p>
+              </div>
+            </div>
+            <div class="row user-detail-row my-3 justify-content-between">
+              <div class="col-5">
+                <label>Approved</label>
+              </div>
+              <div class="col-3">
+                <p class="text-danger text-right"><i class="fas fa-times-circle"></i></p>
+              </div>
+            </div>
+            <div class="row user-detail-row my-3 justify-content-between">
+              <div class="col-5">
+                <label>Active</label>
+              </div>
+              <div class="col-3">
+                <p class="text-success text-right"><i class="fas fa-check-circle"></i></p>
+              </div>
+            </div>
+            <div class="row user-detail-row my-3 justify-content-between">
+              <div class="col-5">
+                <label>Email Verified</label>
+              </div>
+              <div class="col-3">
+                <p class="text-success text-right" *ngIf="userData.emailConfirmed == true"><i class="fas fa-check-circle"></i></p>
+                <p class="text-danger text-right" *ngIf="userData.emailConfirmed == false"><i class="fas fa-times-circle"></i></p>
+              </div>
+            </div>
+            <div class="row user-detail-row my-3 justify-content-between">
+              <div class="col-5">
+                <label>Phone Verified</label>
+              </div>
+              <div class="col-3">
+                <p class="text-success text-right" *ngIf="userData.phoneNumberConfirmed == true"><i class="fas fa-check-circle"></i></p>
+                <p class="text-danger text-right" *ngIf="userData.phoneNumberConfirmed == false"><i class="fas fa-times-circle"></i></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="page2__col page2__col_w65">
+      <div class="card1">
+        <div class="card1__head">
+          <div class="card1__category h5-responsive">Profile Details</div>
+        </div>
+        <div class="card1__body">
+          <div class="card1__list">
+            <div class="row user-detail-row my-3">
+              <div class="col-md-5">
+                <label>First Name</label>
+              </div>
+              <div class="col-md-7">
+                <p>{{ userData.firstName }}</p>
+              </div>
+            </div>
+
+            <div class="row user-detail-row my-3">
+              <div class="col-md-5">
+                <label>Last Name</label>
+              </div>
+              <div class="col-md-7">
+                <p>{{ userData.lastName }}</p>
+              </div>
+            </div>
+
+            <div class="row user-detail-row my-3">
+              <div class="col-md-5">
+                <label>Email</label>
+              </div>
+              <div class="col-md-7">
+                <p>{{ userData.email }}</p>
+              </div>
+            </div>
+
+            <div class="row user-detail-row my-3">
+              <div class="col-md-5">
+                <label>User Name</label>
+              </div>
+              <div class="col-md-7">
+                <p>{{ userData.userName }}</p>
+              </div>
+            </div>
+
+            <div class="row user-detail-row my-3">
+              <div class="col-md-5">
+                <label>Website</label>
+              </div>
+              <div class="col-md-7">
+                <p>{{ userData.website }}</p>
+              </div>
+            </div>
+
+            <div class="row user-detail-row my-3">
+              <div class="col-md-5">
+                <label>Country</label>
+              </div>
+              <div class="col-md-7">
+                <p>{{ userData.country }}</p>
+              </div>
+            </div>
+
+            <div class="row user-detail-row my-3">
+              <div class="col-md-5">
+                <label>City</label>
+              </div>
+              <div class="col-md-7">
+                <p>{{ userData.city }}</p>
+              </div>
+            </div>
+
+            <div class="row user-detail-row my-3">
+              <div class="col-md-5">
+                <label>Phone Number</label>
+              </div>
+              <div class="col-md-7">
+                <p>{{ userData.phoneNumber }}</p>
+              </div>
+            </div>
+
+            <div class="row user-detail-row my-3">
+              <div class="col-md-5">
+                <label>Position</label>
+              </div>
+              <div class="col-md-7">
+                <p>{{ userData.position }}</p>
+              </div>
+            </div>
+
+            <div class="row user-detail-row my-3">
+              <div class="col-md-5">
+                <label>State</label>
+              </div>
+              <div class="col-md-7">
+                <p>{{ userData.state }}</p>
+              </div>
+            </div>
+
+            <div class="row user-detail-row my-3">
+              <div class="col-md-5">
+                <label>Zip Code</label>
+              </div>
+              <div class="col-md-7">
+                <p>{{ userData.zipCode }}</p>
+              </div>
+            </div>
+
+            <div class="row user-detail-row my-3">
+              <div class="col-md-5">
+                <label>Company Name</label>
+              </div>
+              <div class="col-md-7">
+                <p>{{ userData.componyName }}</p>
+              </div>
+            </div>
+
+            <div class="row user-detail-row my-3">
+              <div class="col-md-5">
+                <label>Company Address</label>
+              </div>
+              <div class="col-md-7">
+                <p>{{ userData.componyAddress }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card1">
+        <div class="card1__head">
+          <div class="card1__category h5-responsive">Edit Details</div>
+        </div>
+        <div class="card1__body">
+          <div class="card1__list">
+            <form
+              [formGroup]="EditForm"
+              #editForm="ngForm"
+              (ngSubmit)="onSubmit()"
+            >
+              <div class="col-md-8 user-detail-row my-3">
+                <label class="my-1">First Name</label>
+                <div class="field">
+                  <div class="field__wrap">
+                    <input
+                      class="field__input"
+                      formControlName="firstName"
+                      [value]="userData.firstName"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="validation-box"
+                  *ngIf="
+                    (FirstName.invalid && FirstName.touched) ||
+                    (FirstName.invalid && editForm.submitted)
+                  "
+                >
+                  <span *ngIf="FirstName.hasError('required')"
+                    >FirstName is required</span
+                  >
+                  <span *ngIf="FirstName.errors.minlength"
+                    >Minimum 2 Characters are required</span
+                  >
+                  <span *ngIf="FirstName.errors.maxlength"
+                    >Maximum 10 Characters are required</span
+                  >
+                </div>
+              </div>
+
+              <div class="col-md-8 user-detail-row my-3">
+                <label class="my-1">Last Name</label>
+                <div class="field">
+                  <div class="field__wrap">
+                    <input class="field__input" formControlName="lastName" />
+                  </div>
+                </div>
+                <div
+                  class="validation-box"
+                  *ngIf="
+                    (LastName.invalid && LastName.touched) ||
+                    (LastName.invalid && editForm.submitted)
+                  "
+                >
+                  <span *ngIf="LastName.hasError('required')"
+                    >LastName is required</span
+                  >
+                  <span *ngIf="LastName.errors.minlength"
+                    >Minimum 2 Characters are required</span
+                  >
+                  <span *ngIf="LastName.errors.maxlength"
+                    >Maximum 10 Characters are required</span
+                  >
+                </div>
+              </div>
+
+              <div class="col-md-8 user-detail-row my-3">
+                <label class="my-1">Email</label>
+                <div class="field">
+                  <div class="field__wrap">
+                    <input
+                      class="field__input"
+                      formControlName="email"
+                      disabled
+                    />
+                  </div>
+                </div>
+                <div
+                  class="validation-box"
+                  *ngIf="
+                    (Email.invalid && Email.touched) ||
+                    (Email.invalid && editForm.submitted)
+                  "
+                >
+                  <span *ngIf="Email.hasError('required')"
+                    >Email is required</span
+                  >
+                  <span *ngIf="Email.hasError('email')"
+                    >plz, Enter a Valid Email.
+                  </span>
+                </div>
+              </div>
+
+              <div class="col-md-8 user-detail-row my-3">
+                <label class="my-1">User Name</label>
+                <div class="field">
+                  <div class="field__wrap">
+                    <input class="field__input" formControlName="userName" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-8 user-detail-row my-3">
+                <label class="my-1">Website</label>
+                <div class="field">
+                  <div class="field__wrap">
+                    <input class="field__input" formControlName="website" />
+                  </div>
+                </div>
+                <div
+                  class="validation-box"
+                  *ngIf="Website.invalid && Website.touched"
+                >
+                  <span *ngIf="Website.errors.pattern"
+                    >plz, enter a valid Url</span
+                  >
+                </div>
+              </div>
+
+              <div class="col-md-8 user-detail-row my-3">
+                <label class="my-1">Country</label>
+                <div class="field">
+                  <div class="field__wrap">
+                    <input class="field__input" formControlName="country" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-8 user-detail-row my-3">
+                <label class="my-1">City</label>
+                <div class="field">
+                  <div class="field__wrap">
+                    <input class="field__input" formControlName="componyCity" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-8 user-detail-row my-3">
+                <label class="my-1">Phone Number</label>
+                <div class="field">
+                  <div class="field__wrap">
+                    <input class="field__input" formControlName="phoneNumber" />
+                  </div>
+                </div>
+                <div
+                  class="validation-box"
+                  *ngIf="PhoneNumber.invalid && PhoneNumber.touched"
+                >
+                  <span *ngIf="PhoneNumber.errors.pattern"
+                    >Only Numbers are allowed</span
+                  >
+                </div>
+              </div>
+
+              <div class="col-md-8 user-detail-row my-3">
+                <label class="my-1">Position</label>
+                <div class="field">
+                  <div class="field__wrap">
+                    <input class="field__input" formControlName="position" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-8 user-detail-row my-3">
+                <label class="my-1">State</label>
+                <div class="field">
+                  <div class="field__wrap">
+                    <input
+                      class="field__input"
+                      formControlName="componyState"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-8 user-detail-row my-3">
+                <label class="my-1">Zip Code</label>
+                <div class="field">
+                  <div class="field__wrap">
+                    <input
+                      class="field__input"
+                      formControlName="componyZipCode"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-8 user-detail-row my-3">
+                <label class="my-1">Company Name</label>
+                <div class="field">
+                  <div class="field__wrap">
+                    <input class="field__input" formControlName="componyName" />
+                  </div>
+                </div>
+                <div
+                  class="validation-box"
+                  *ngIf="
+                    (ComponyName.invalid && ComponyName.touched) ||
+                    (ComponyName.invalid && editForm.submitted)
+                  "
+                >
+                  <span *ngIf="ComponyName.hasError('required')"
+                    >Compony Name is required</span
+                  >
+                </div>
+              </div>
+
+              <div class="col-md-8 user-detail-row my-3">
+                <label class="my-1">Company Address</label>
+                <div class="field">
+                  <div class="field__wrap">
+                    <input
+                      class="field__input"
+                      formControlName="componyAddress"
+                    />
+                  </div>
+                </div>
+                <div
+                  class="validation-box"
+                  *ngIf="
+                    (ComponyAddress.invalid && ComponyAddress.touched) ||
+                    (ComponyAddress.invalid && editForm.submitted)
+                  "
+                >
+                  <span *ngIf="ComponyAddress.hasError('required')"
+                    >Compony Address is required</span
+                  >
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-3">
+                  <button
+                    type="submit"
+                    mdbBtn
+                    color="info"
+                    mdbWavesEffect
+                    style="min-width: 140px; height: auto"
+                  >
+                    Update <i class="fas fa-user-edit ml-1"></i>
+                  </button>
+                </div>
+                <div class="col-3">
+                  <button
+                    type="button"
+                    mdbBtn
+                    color="secondary"
+                    (click)="onReset()"
+                    mdbWavesEffect
+                    style="min-width: 140px; height: auto"
+                  >
+                    Reset <i class="fas fa-sync ml-1"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

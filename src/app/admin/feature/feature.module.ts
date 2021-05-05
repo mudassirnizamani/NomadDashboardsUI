@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeModule } from './home/home.module';
+import { AdminUsersModule } from './users/users.module';
+import { UserProfileModule } from './user-profile/user-profile.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -9,10 +12,16 @@ import { HomeModule } from './home/home.module';
   ],
   imports: [
     CommonModule,
-    HomeModule
+    HomeModule,
+    AdminUsersModule,
+    FormsModule,
+    ReactiveFormsModule,
+    UserProfileModule
   ],
   exports: [
-    HomeModule
-  ]
+    HomeModule,
+    AdminUsersModule,
+    UserProfileModule
+  ],
 })
 export class FeatureModule { }

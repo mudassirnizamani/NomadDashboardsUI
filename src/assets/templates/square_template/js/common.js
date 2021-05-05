@@ -225,6 +225,7 @@ function activeField() {
     });
 }
 
+
 // accord
 (function () {
     var items = $('.js-accord-item');

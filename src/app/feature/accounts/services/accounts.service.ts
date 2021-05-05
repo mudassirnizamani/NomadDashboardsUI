@@ -19,7 +19,7 @@ export class AccountsService {
       lastName: model.lastName.toString(),
       website: model.website.toString(),
       position: model.position.toString(),
-      componyName: model.componyAddress.toString(),
+      componyName: model.componyName.toString(),
       zipCode: model.zipCode,
       state: model.state.toString(),
       password: model.password.toString(),

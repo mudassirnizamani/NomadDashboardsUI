@@ -43,7 +43,8 @@
               "node_modules/hammerjs/hammer.min.js",
               "src/assets/templates/square_template/js/app.js",
               "src/assets/templates/square_template/js/common.js",
-              "src/assets/templates/square_template/js/charts.js"
+              "src/assets/templates/square_template/js/charts.js",
+              "src/assets/js/user-dropdown.js"
             ]
           },
           "configurations": {

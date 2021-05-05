@@ -9,6 +9,12 @@ export const environment = {
   AccountsUrls: {
     Signup: '/Accounts/Signup',
     Signin: '/Accounts/Signin',
+  },
+  UserUrls: {
+    UserProfile: '/Users',
+    GetAllUsers: '/Users/GetAllUsers',
+    GetUserByUserName: '/Users/GetUserByUserName/',
+    AdminUpdateUsers: '/Users/AdminUpdateUser'
   }
 };
 

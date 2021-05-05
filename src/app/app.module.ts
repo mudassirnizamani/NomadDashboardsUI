@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -15,12 +15,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AccountsService } from './feature/accounts/services/accounts.service';
 import { HttpClientModule } from '@angular/common/http';
+
 import { AdminModule } from './admin/admin.module';
+import { AdminUsersModule } from './admin/feature/users/users.module';
+import { UserProfileModule } from './admin/feature/user-profile/user-profile.module';
 
 // Variables - Mudasir Ali
 
 const CustomModules = [CoreModule, FeatureModule, BlocksModule];
 
+const AdminModules = [
+  AdminModule,
+  AdminUsersModule,
+  UserProfileModule
+]
 
 const ThirdPartyModules = [];
 
@@ -38,9 +46,10 @@ const ThirdPartyModules = [];
       progressBar: true,
     }),
     CustomModules,
-    AdminModule
+    AdminModules
   ],
-  providers: [AccountsService],
+  providers: [AccountsService, CoreModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
