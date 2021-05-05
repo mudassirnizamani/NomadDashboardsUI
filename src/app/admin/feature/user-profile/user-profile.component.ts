@@ -28,7 +28,7 @@ export class UserProfileComponent implements OnInit {
 
     // Edit Form for EditDetails - Mudasir Ali
     this.EditForm = new FormGroup({
-      userName: new FormControl('', [
+      userName: new FormControl({value: '', disabled: true}, [
         Validators.required,
         Validators.minLength(2),
         Validators.maxLength(70),
@@ -43,7 +43,7 @@ export class UserProfileComponent implements OnInit {
         Validators.minLength(2),
         Validators.maxLength(20),
       ]),
-      email: new FormControl({ disabled: true }, [
+      email: new FormControl({value: '', disabled: true}, [
         Validators.required,
         Validators.email,
       ]),
@@ -77,6 +77,7 @@ export class UserProfileComponent implements OnInit {
             componyCity: res.city,
             componyState: res.state,
           });
+          console.log(this.userData)
         } else {
           this.toastr.error(
             `Username '${this.username}' doesn't exist`,

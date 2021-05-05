@@ -31,7 +31,7 @@
           <div class="card1__list">
             <div class="row user-detail-row my-3 justify-content-between">
               <div class="col-5">
-                <label>Admin</label>
+                <label class="card__title">Admin</label>
               </div>
               <div class="col-3">
                 <p class="text-success text-right"><i class="fas fa-check-circle"></i></p>
@@ -39,7 +39,7 @@
             </div>
             <div class="row user-detail-row my-3 justify-content-between">
               <div class="col-5">
-                <label>Approved</label>
+                <label class="card__title">Approved</label>
               </div>
               <div class="col-3">
                 <p class="text-danger text-right"><i class="fas fa-times-circle"></i></p>
@@ -47,7 +47,7 @@
             </div>
             <div class="row user-detail-row my-3 justify-content-between">
               <div class="col-5">
-                <label>Active</label>
+                <label class="card__title">Active</label>
               </div>
               <div class="col-3">
                 <p class="text-success text-right"><i class="fas fa-check-circle"></i></p>
@@ -55,7 +55,7 @@
             </div>
             <div class="row user-detail-row my-3 justify-content-between">
               <div class="col-5">
-                <label>Email Verified</label>
+                <label class="card__title">Email Verified</label>
               </div>
               <div class="col-3">
                 <p class="text-success text-right" *ngIf="userData.emailConfirmed == true"><i class="fas fa-check-circle"></i></p>
@@ -64,7 +64,7 @@
             </div>
             <div class="row user-detail-row my-3 justify-content-between">
               <div class="col-5">
-                <label>Phone Verified</label>
+                <label class="card__title">Phone Verified</label>
               </div>
               <div class="col-3">
                 <p class="text-success text-right" *ngIf="userData.phoneNumberConfirmed == true"><i class="fas fa-check-circle"></i></p>
@@ -85,7 +85,7 @@
           <div class="card1__list">
             <div class="row user-detail-row my-3">
               <div class="col-md-5">
-                <label>First Name</label>
+                <label class="card__title">First Name</label>
               </div>
               <div class="col-md-7">
                 <p>{{ userData.firstName }}</p>
@@ -94,7 +94,7 @@
 
             <div class="row user-detail-row my-3">
               <div class="col-md-5">
-                <label>Last Name</label>
+                <label class="card__title">Last Name</label>
               </div>
               <div class="col-md-7">
                 <p>{{ userData.lastName }}</p>
@@ -103,7 +103,7 @@
 
             <div class="row user-detail-row my-3">
               <div class="col-md-5">
-                <label>Email</label>
+                <label class="card__title">Email</label>
               </div>
               <div class="col-md-7">
                 <p>{{ userData.email }}</p>
@@ -112,7 +112,7 @@
 
             <div class="row user-detail-row my-3">
               <div class="col-md-5">
-                <label>User Name</label>
+                <label class="card__title">User Name</label>
               </div>
               <div class="col-md-7">
                 <p>{{ userData.userName }}</p>
@@ -121,7 +121,7 @@
 
             <div class="row user-detail-row my-3">
               <div class="col-md-5">
-                <label>Website</label>
+                <label class="card__title">Website</label>
               </div>
               <div class="col-md-7">
                 <p>{{ userData.website }}</p>
@@ -130,7 +130,7 @@
 
             <div class="row user-detail-row my-3">
               <div class="col-md-5">
-                <label>Country</label>
+                <label class="card__title">Country</label>
               </div>
               <div class="col-md-7">
                 <p>{{ userData.country }}</p>
@@ -139,7 +139,7 @@
 
             <div class="row user-detail-row my-3">
               <div class="col-md-5">
-                <label>City</label>
+                <label class="card__title">City</label>
               </div>
               <div class="col-md-7">
                 <p>{{ userData.city }}</p>
@@ -148,7 +148,7 @@
 
             <div class="row user-detail-row my-3">
               <div class="col-md-5">
-                <label>Phone Number</label>
+                <label class="card__title">Phone Number</label>
               </div>
               <div class="col-md-7">
                 <p>{{ userData.phoneNumber }}</p>
@@ -157,7 +157,7 @@
 
             <div class="row user-detail-row my-3">
               <div class="col-md-5">
-                <label>Position</label>
+                <label class="card__title">Position</label>
               </div>
               <div class="col-md-7">
                 <p>{{ userData.position }}</p>
@@ -166,7 +166,7 @@
 
             <div class="row user-detail-row my-3">
               <div class="col-md-5">
-                <label>State</label>
+                <label class="card__title">State</label>
               </div>
               <div class="col-md-7">
                 <p>{{ userData.state }}</p>
@@ -175,7 +175,7 @@
 
             <div class="row user-detail-row my-3">
               <div class="col-md-5">
-                <label>Zip Code</label>
+                <label class="card__title">Zip Code</label>
               </div>
               <div class="col-md-7">
                 <p>{{ userData.zipCode }}</p>
@@ -184,7 +184,7 @@
 
             <div class="row user-detail-row my-3">
               <div class="col-md-5">
-                <label>Company Name</label>
+                <label class="card__title">Company Name</label>
               </div>
               <div class="col-md-7">
                 <p>{{ userData.componyName }}</p>
@@ -193,7 +193,7 @@
 
             <div class="row user-detail-row my-3">
               <div class="col-md-5">
-                <label>Company Address</label>
+                <label class="card__title">Company Address</label>
               </div>
               <div class="col-md-7">
                 <p>{{ userData.componyAddress }}</p>
@@ -215,7 +215,7 @@
               (ngSubmit)="onSubmit()"
             >
               <div class="col-md-8 user-detail-row my-3">
-                <label class="my-1">First Name</label>
+                <label class="my-1" class="card__title">First Name</label>
                 <div class="field">
                   <div class="field__wrap">
                     <input
@@ -245,7 +245,7 @@
               </div>
 
               <div class="col-md-8 user-detail-row my-3">
-                <label class="my-1">Last Name</label>
+                <label class="my-1" class="card__title">Last Name</label>
                 <div class="field">
                   <div class="field__wrap">
                     <input class="field__input" formControlName="lastName" />
@@ -271,7 +271,7 @@
               </div>
 
               <div class="col-md-8 user-detail-row my-3">
-                <label class="my-1">Email</label>
+                <label class="my-1" class="card__title">Email</label>
                 <div class="field">
                   <div class="field__wrap">
                     <input
@@ -298,7 +298,7 @@
               </div>
 
               <div class="col-md-8 user-detail-row my-3">
-                <label class="my-1">User Name</label>
+                <label class="my-1" class="card__title">User Name</label>
                 <div class="field">
                   <div class="field__wrap">
                     <input class="field__input" formControlName="userName" />
@@ -307,7 +307,7 @@
               </div>
 
               <div class="col-md-8 user-detail-row my-3">
-                <label class="my-1">Website</label>
+                <label class="my-1" class="card__title">Website</label>
                 <div class="field">
                   <div class="field__wrap">
                     <input class="field__input" formControlName="website" />
@@ -324,7 +324,7 @@
               </div>
 
               <div class="col-md-8 user-detail-row my-3">
-                <label class="my-1">Country</label>
+                <label class="my-1" class="card__title">Country</label>
                 <div class="field">
                   <div class="field__wrap">
                     <input class="field__input" formControlName="country" />
@@ -333,7 +333,7 @@
               </div>
 
               <div class="col-md-8 user-detail-row my-3">
-                <label class="my-1">City</label>
+                <label class="my-1" class="card__title">City</label>
                 <div class="field">
                   <div class="field__wrap">
                     <input class="field__input" formControlName="componyCity" />
@@ -359,7 +359,7 @@
               </div>
 
               <div class="col-md-8 user-detail-row my-3">
-                <label class="my-1">Position</label>
+                <label class="my-1" class="card__title">Position</label>
                 <div class="field">
                   <div class="field__wrap">
                     <input class="field__input" formControlName="position" />
@@ -368,7 +368,7 @@
               </div>
 
               <div class="col-md-8 user-detail-row my-3">
-                <label class="my-1">State</label>
+                <label class="my-1" class="card__title">State</label>
                 <div class="field">
                   <div class="field__wrap">
                     <input
@@ -380,7 +380,7 @@
               </div>
 
               <div class="col-md-8 user-detail-row my-3">
-                <label class="my-1">Zip Code</label>
+                <label class="my-1" class="card__title">Zip Code</label>
                 <div class="field">
                   <div class="field__wrap">
                     <input
@@ -392,7 +392,7 @@
               </div>
 
               <div class="col-md-8 user-detail-row my-3">
-                <label class="my-1">Company Name</label>
+                <label class="my-1" class="card__title">Company Name</label>
                 <div class="field">
                   <div class="field__wrap">
                     <input class="field__input" formControlName="componyName" />
@@ -412,7 +412,7 @@
               </div>
 
               <div class="col-md-8 user-detail-row my-3">
-                <label class="my-1">Company Address</label>
+                <label class="my-1" class="card__title">Company Address</label>
                 <div class="field">
                   <div class="field__wrap">
                     <input
@@ -433,8 +433,8 @@
                   >
                 </div>
               </div>
-              <div class="row">
-                <div class="col-3">
+              <div class="row mt-4">
+                <div class="col-md-3 col-sm-6">
                   <button
                     type="submit"
                     mdbBtn
@@ -445,7 +445,7 @@
                     Update <i class="fas fa-user-edit ml-1"></i>
                   </button>
                 </div>
-                <div class="col-3">
+                <div class="col-md-3 col-sm-6">
                   <button
                     type="button"
                     mdbBtn

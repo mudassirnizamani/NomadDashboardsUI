@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 // Declared some variable for JavaScript - Mudasir Ali
 declare const themeSwitch: any;
 declare const userMainImgDropdown: any;
+declare const sidebarToggle: any;
 
 
 
@@ -18,6 +19,7 @@ export class AdminHomeLayoutComponent implements OnInit {
 
   ngOnInit(): void {
     // Running JavaScript Functions - Mudasir ALi
+    sidebarToggle();
     themeSwitch();
     userMainImgDropdown();
 
@@ -27,6 +29,10 @@ export class AdminHomeLayoutComponent implements OnInit {
   Logout() {
     localStorage.removeItem('token');
     this.router.navigateByUrl('/signin');
+  }
+
+  onSidebarClicked() {
+    sidebarToggle();
   }
 
 }
