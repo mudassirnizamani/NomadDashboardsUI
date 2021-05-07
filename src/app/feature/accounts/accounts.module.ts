@@ -6,12 +6,18 @@ import { AccountsService } from './services/accounts.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { EmployerSignupComponent } from './components/employer-signup/employer-signup.component';
 
 @NgModule({
-  declarations: [SigninComponent, SignupComponent],
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule, MDBBootstrapModule],
+  declarations: [SigninComponent, SignupComponent, EmployerSignupComponent],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+    MDBBootstrapModule,
+  ],
   providers: [AccountsService],
-  exports: [
-  ]
+  exports: [],
 })
 export class AccountsModule {}

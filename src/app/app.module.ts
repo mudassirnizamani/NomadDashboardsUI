@@ -19,16 +19,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './admin/admin.module';
 import { AdminUsersModule } from './admin/feature/users/users.module';
 import { UserProfileModule } from './admin/feature/user-profile/user-profile.module';
+import { EmployerModule } from './employer/employer.module';
 
 // Variables - Mudasir Ali
 
 const CustomModules = [CoreModule, FeatureModule, BlocksModule];
 
-const AdminModules = [
-  AdminModule,
-  AdminUsersModule,
-  UserProfileModule
-]
+const AdminModules = [AdminModule, AdminUsersModule, UserProfileModule];
+
+const EmployerModules = [EmployerModule];
 
 const ThirdPartyModules = [];
 
@@ -42,11 +41,12 @@ const ThirdPartyModules = [];
     BrowserAnimationsModule,
     ToastrModule.forRoot({
       closeButton: true,
-      timeOut: 3500,
+      timeOut: 4000,
       progressBar: true,
     }),
     CustomModules,
-    AdminModules
+    AdminModules,
+    EmployerModules,
   ],
   providers: [AccountsService, CoreModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

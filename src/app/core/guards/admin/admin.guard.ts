@@ -12,7 +12,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class UserGuard implements CanActivate {
+export class AdminGuard implements CanActivate {
   constructor(private router: Router, private toastr: ToastrService) {}
 
   canActivate(
@@ -23,11 +23,14 @@ export class UserGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (localStorage.getItem('token') != null) {
+    if (
+      localStorage.getItem('token') != null &&
+      localStorage.getItem('userType') == 'Admin'
+    ) {
       return true;
     } else {
       this.toastr.warning(
-        'You are not Authorized to access admin Dashboard',
+        'You are not Authorized to access Admin Dashboard',
         'Not Authorized'
       );
       this.router.navigate(['/signin']);

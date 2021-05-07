@@ -5,9 +5,14 @@ import { AdminHomeComponent } from './admin/feature/home/home.component';
 import { UserProfileComponent } from './admin/feature/user-profile/user-profile.component';
 import { AdminUsersComponent } from './admin/feature/users/users.component';
 import { AccountsLayoutComponent } from './blocks/layouts/accounts-layout/accounts-layout.component';
-import { UserGuard } from './core/guards/user/user.guard';
+import { EmployerHomeLayoutComponent } from './employer/blocks/layouts/home-layout/home-layout.component';
+import { EmployerSignupComponent } from './feature/accounts/components/employer-signup/employer-signup.component';
 import { SigninComponent } from './feature/accounts/components/signin/signin.component';
 import { SignupComponent } from './feature/accounts/components/signup/signup.component';
+
+// Guards - Mudasir Ali
+import { AdminGuard } from './core/guards/admin/admin.guard';
+import { EmployerGuard } from './core/guards/employer/employer.guard';
 
 const routes: Routes = [
   {
@@ -26,12 +31,16 @@ const routes: Routes = [
         path: 'signin',
         component: SigninComponent,
       },
+      {
+        path: 'signup/employer',
+        component: EmployerSignupComponent,
+      },
     ],
   },
   {
     path: 'admin',
     component: AdminHomeLayoutComponent,
-    canActivate: [UserGuard],
+    canActivate: [AdminGuard],
     children: [
       {
         path: '',
@@ -50,6 +59,12 @@ const routes: Routes = [
         component: UserProfileComponent,
       },
     ],
+  },
+  {
+    path: 'employer',
+    component: EmployerHomeLayoutComponent,
+    canActivate: [EmployerGuard],
+    children: [],
   },
 ];
 

@@ -7,34 +7,29 @@ declare const themeSwitch: any;
 declare const userMainImgDropdown: any;
 declare const sidebarToggle: any;
 
-
-
 @Component({
   selector: 'app-home-layout',
   templateUrl: './home-layout.component.html',
-  styleUrls: ['./home-layout.component.scss']
+  styleUrls: ['./home-layout.component.scss'],
 })
-export class AdminHomeLayoutComponent implements OnInit {
-
-  constructor(private router: Router, private toastr: ToastrService) { }
+export class EmployerHomeLayoutComponent implements OnInit {
+  constructor(private router: Router, private toastr: ToastrService) {}
 
   ngOnInit(): void {
     // Running JavaScript Functions - Mudasir ALi
     sidebarToggle();
     themeSwitch();
     userMainImgDropdown();
-
-
   }
 
   Logout() {
     localStorage.removeItem('token');
-    this.toastr.success("You are Successfully Signed out", "Signed Out")
+    localStorage.removeItem('userType');
+    this.toastr.success('You are Successfully Signed out', 'Signed Out');
     this.router.navigateByUrl('/signin');
   }
 
   onSidebarClicked() {
     sidebarToggle();
   }
-
 }

@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Signup } from '../../models/Signup';
+import { EmployerSignup } from '../../models/EmployerSignupModel.interface';
 import { AccountsService } from '../../services/accounts.service';
 
 // Declared some variable for JavaScript - Mudasir Ali
 declare const activeField: any;
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss'],
+  selector: 'app-employer-signup',
+  templateUrl: './employer-signup.component.html',
+  styleUrls: ['./employer-signup.component.scss'],
 })
-export class SignupComponent implements OnInit {
+export class EmployerSignupComponent implements OnInit {
   // Variables
   SignupForm: FormGroup;
   reg = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
@@ -25,52 +25,49 @@ export class SignupComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-  if (localStorage.getItem('token') != null) {
-    this.toastr.info(`You are already Signed In`, 'Already Signed In');
-    this.router.navigateByUrl('/admin')
-  }
+    if (localStorage.getItem('token') != null) {
+      this.toastr.info(`You are already Signed In`, 'Already Signed In');
+      this.router.navigateByUrl('/admin');
+    }
 
-  activeField();
+    activeField();
 
-  // Signup Form for Signup Page - Mudasir Ali
-  this.SignupForm = new FormGroup(
-    {
-      userName: new FormControl('', [
-        Validators.required,
-        Validators.minLength(2),
-        Validators.maxLength(70),
-      ]),
-      firstName: new FormControl('', [
-        Validators.required,
-        Validators.minLength(2),
-        Validators.maxLength(20),
-      ]),
-      lastName: new FormControl('', [
-        Validators.required,
-        Validators.minLength(2),
-        Validators.maxLength(20),
-      ]),
-      email: new FormControl('', [
-        Validators.required,
-        Validators.email,
-      ]),
-      phoneNumber: new FormControl(0, [Validators.pattern('^[0-9]*$')]),
-      website: new FormControl('', [Validators.pattern(this.reg)]),
-      position: new FormControl('', []),
-      password: new FormControl('', [
-        Validators.required,
-        Validators.minLength(8),
-      ]),
-      confirmPassword: new FormControl('', [Validators.required]),
-      componyName: new FormControl('', [Validators.required]),
-      country: new FormControl('', []),
-      componyAddress: new FormControl('', [Validators.required]),
-      componyZipCode: new FormControl(0, [Validators.pattern('^[0-9]*$')]),
-      componyCity: new FormControl('', []),
-      componyState: new FormControl('', []),
-    },
-    this.passwordMatchingValidator
-  );
+    // Signup Form for Signup Page - Mudasir Ali
+    this.SignupForm = new FormGroup(
+      {
+        userName: new FormControl('', [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.maxLength(70),
+        ]),
+        firstName: new FormControl('', [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.maxLength(20),
+        ]),
+        lastName: new FormControl('', [
+          Validators.required,
+          Validators.minLength(2),
+          Validators.maxLength(20),
+        ]),
+        email: new FormControl('', [Validators.required, Validators.email]),
+        phoneNumber: new FormControl(0, [Validators.pattern('^[0-9]*$')]),
+        website: new FormControl('', [Validators.pattern(this.reg)]),
+        position: new FormControl('', []),
+        password: new FormControl('', [
+          Validators.required,
+          Validators.minLength(8),
+        ]),
+        confirmPassword: new FormControl('', [Validators.required]),
+        componyName: new FormControl('', [Validators.required]),
+        country: new FormControl('', []),
+        componyAddress: new FormControl('', [Validators.required]),
+        componyZipCode: new FormControl(0, [Validators.pattern('^[0-9]*$')]),
+        componyCity: new FormControl('', []),
+        componyState: new FormControl('', []),
+      },
+      this.passwordMatchingValidator
+    );
   }
 
   // Validation function for Matching Password and Confirm Password - Mudasir Ali
@@ -145,7 +142,7 @@ export class SignupComponent implements OnInit {
     if (this.SignupForm.invalid) {
       this.toastr.warning('Plz, fill the Fields Correctly !');
     } else {
-      var model: Signup = {
+      var model: EmployerSignup = {
         email: this.SignupForm.value.email,
         userName: this.SignupForm.value.userName,
         firstName: this.SignupForm.value.firstName,
@@ -162,10 +159,14 @@ export class SignupComponent implements OnInit {
         componyAddress: this.SignupForm.value.componyAddress,
       };
 
-      this.accountsService.Signup(model).subscribe(
+      this.accountsService.EmployerSignup(model).subscribe(
         (res: any) => {
           if (res.succeeded) {
             this.SignupForm.reset();
+            this.toastr.success(
+              `Account for '${model.userName}, is Successfully created '`,
+              'Account is created'
+            );
             this.router.navigateByUrl('/signin');
           } else {
             res.errors.forEach((element) => {
