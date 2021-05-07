@@ -7,9 +7,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { EmployerSignupComponent } from './components/employer-signup/employer-signup.component';
+import { EmployeeSignupComponent } from './components/employee-signup/employee-signup.component';
 
 @NgModule({
-  declarations: [SigninComponent, SignupComponent, EmployerSignupComponent],
+  declarations: [SigninComponent, SignupComponent, EmployerSignupComponent, EmployeeSignupComponent],
   imports: [
     CommonModule,
     FormsModule,

@@ -2,18 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { EmployerSignup } from '../../models/EmployerSignupModel.interface';
+import { EmployeeSignup } from '../../models/EmployeeSignup.interface';
 import { AccountsService } from '../../services/accounts.service';
 
 // Declared some variable for JavaScript - Mudasir Ali
 declare const activeField: any;
 
 @Component({
-  selector: 'app-employer-signup',
-  templateUrl: './employer-signup.component.html',
-  styleUrls: ['./employer-signup.component.scss'],
+  selector: 'app-employee-signup',
+  templateUrl: './employee-signup.component.html',
+  styleUrls: ['./employee-signup.component.scss'],
 })
-export class EmployerSignupComponent implements OnInit {
+export class EmployeeSignupComponent implements OnInit {
   // Variables
   SignupForm: FormGroup;
   reg = '(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?';
@@ -67,19 +67,11 @@ export class EmployerSignupComponent implements OnInit {
         ]),
         email: new FormControl('', [Validators.required, Validators.email]),
         phoneNumber: new FormControl(0, [Validators.pattern('^[0-9]*$')]),
-        website: new FormControl('', [Validators.pattern(this.reg)]),
-        position: new FormControl('', []),
         password: new FormControl('', [
           Validators.required,
           Validators.minLength(8),
         ]),
         confirmPassword: new FormControl('', [Validators.required]),
-        componyName: new FormControl('', [Validators.required]),
-        country: new FormControl('', []),
-        componyAddress: new FormControl('', [Validators.required]),
-        componyZipCode: new FormControl(0, [Validators.pattern('^[0-9]*$')]),
-        componyCity: new FormControl('', []),
-        componyState: new FormControl('', []),
       },
       this.passwordMatchingValidator
     );
@@ -113,14 +105,6 @@ export class EmployerSignupComponent implements OnInit {
     return this.SignupForm.get('phoneNumber') as FormControl;
   }
 
-  get Website() {
-    return this.SignupForm.get('website') as FormControl;
-  }
-
-  get Position() {
-    return this.SignupForm.get('position') as FormControl;
-  }
-
   get Password() {
     return this.SignupForm.get('password') as FormControl;
   }
@@ -129,52 +113,20 @@ export class EmployerSignupComponent implements OnInit {
     return this.SignupForm.get('confirmPassword') as FormControl;
   }
 
-  get ComponyName() {
-    return this.SignupForm.get('componyName') as FormControl;
-  }
-
-  get Country() {
-    return this.SignupForm.get('componyPhone') as FormControl;
-  }
-
-  get ComponyAddress() {
-    return this.SignupForm.get('componyAddress') as FormControl;
-  }
-
-  get ComponyZipCode() {
-    return this.SignupForm.get('componyZipCode') as FormControl;
-  }
-
-  get ComponyCity() {
-    return this.SignupForm.get('componyCity') as FormControl;
-  }
-
-  get ComponyState() {
-    return this.SignupForm.get('componyState') as FormControl;
-  }
-
   onSubmit() {
     if (this.SignupForm.invalid) {
       this.toastr.warning('Plz, fill the Fields Correctly !');
     } else {
-      var model: EmployerSignup = {
+      var model: EmployeeSignup = {
         email: this.SignupForm.value.email,
         userName: this.SignupForm.value.userName,
         firstName: this.SignupForm.value.firstName,
         lastName: this.SignupForm.value.lastName,
-        website: this.SignupForm.value.website,
-        position: this.SignupForm.value.position,
-        componyName: this.SignupForm.value.componyName,
-        zipCode: this.SignupForm.value.componyZipCode,
-        state: this.SignupForm.value.componyState,
         password: this.SignupForm.value.confirmPassword,
         phoneNumber: this.SignupForm.value.phoneNumber,
-        country: this.SignupForm.value.country,
-        city: this.SignupForm.value.componyCity,
-        componyAddress: this.SignupForm.value.componyAddress,
       };
 
-      this.accountsService.EmployerSignup(model).subscribe(
+      this.accountsService.EmployeeSignup(model).subscribe(
         (res: any) => {
           if (res.succeeded) {
             this.SignupForm.reset();

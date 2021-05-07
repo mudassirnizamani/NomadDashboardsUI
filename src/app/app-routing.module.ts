@@ -13,6 +13,9 @@ import { SignupComponent } from './feature/accounts/components/signup/signup.com
 // Guards - Mudasir Ali
 import { AdminGuard } from './core/guards/admin/admin.guard';
 import { EmployerGuard } from './core/guards/employer/employer.guard';
+import { EmployeeSignupComponent } from './feature/accounts/components/employee-signup/employee-signup.component';
+import { EmployeeHomeLayoutComponent } from './employee/blocks/layouts/home-layout/home-layout.component';
+import { EmployeeGuard } from './core/guards/employee/employee.guard';
 
 const routes: Routes = [
   {
@@ -35,6 +38,10 @@ const routes: Routes = [
         path: 'signup/employer',
         component: EmployerSignupComponent,
       },
+      {
+        path: 'signup/employee',
+        component: EmployeeSignupComponent
+      }
     ],
   },
   {
@@ -66,6 +73,12 @@ const routes: Routes = [
     canActivate: [EmployerGuard],
     children: [],
   },
+  {
+    path: 'employee',
+    component: EmployeeHomeLayoutComponent,
+    canActivate: [EmployeeGuard],
+    children: []
+  }
 ];
 
 @NgModule({

@@ -20,14 +20,16 @@ import { AdminModule } from './admin/admin.module';
 import { AdminUsersModule } from './admin/feature/users/users.module';
 import { UserProfileModule } from './admin/feature/user-profile/user-profile.module';
 import { EmployerModule } from './employer/employer.module';
+import { EmployeeModule } from './employee/employee.module';
 
 // Variables - Mudasir Ali
-
 const CustomModules = [CoreModule, FeatureModule, BlocksModule];
 
 const AdminModules = [AdminModule, AdminUsersModule, UserProfileModule];
 
 const EmployerModules = [EmployerModule];
+
+const EmployeeModules = [EmployeeModule];
 
 const ThirdPartyModules = [];
 
@@ -47,6 +49,7 @@ const ThirdPartyModules = [];
     CustomModules,
     AdminModules,
     EmployerModules,
+    EmployeeModules,
   ],
   providers: [AccountsService, CoreModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

@@ -1,0 +1,70 @@
+
+.register-box a {
+    position: relative;
+    overflow: hidden;
+    padding: 10px;
+    display: block;
+    font-size: 37px;
+    -webkit-transition: box-shadow .5s ease;
+    transition: box-shadow .5s ease
+}
+
+    .register-box a:hover {
+        -webkit-box-shadow: 0 2px 14px rgba(0,0,0,.35);
+        box-shadow: 0 2px 14px rgba(0,0,0,.35);
+        color: #1aa2f8
+    }
+
+    .register-box a h4 {
+        font-size: 19px;
+        font-weight: 600;
+        color: #424242
+    }
+
+    .register-box a:before {
+        box-sizing: border-box;
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 99.5%;
+        height: 2px;
+        border-bottom: 2px solid transparent;
+        border-left: 2px solid transparent
+    }
+
+    .register-box a:after {
+        box-sizing: border-box;
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 99.5%;
+        height: 2px;
+        border-top: 2px solid transparent;
+        border-right: 2px solid transparent;
+        color: inherit;
+        text-decoration: none
+    }
+
+    .register-box a:hover:before {
+        -webkit-transition: .1s transform linear,.1s height linear .1s;
+        transition: .1s transform linear,.1s height linear .1s;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        height: 100%;
+        border-color: #5a9eda
+    }
+
+    .register-box a:hover:after {
+        -webkit-transition: .1s transform linear .2s,.1s height linear .3s;
+        transition: .1s transform linear .2s,.1s height linear .3s;
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+        height: 100%;
+        border-color: #5a9eda
+    }

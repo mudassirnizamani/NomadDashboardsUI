@@ -1,0 +1,185 @@
+<link rel="stylesheet" href="/assets/templates/square_template/css/app.css" />
+
+<link rel="manifest" href="img/site.webmanifest" />
+<link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5" />
+<meta name="msapplication-TileColor" content="#da532c" />
+<meta name="theme-color" content="#ffffff" />
+<meta name="description" content="Page description" />
+
+<div class="out">
+  <div class="page">
+    <div class="header js-header">
+      <button class="header__burger js-header-burger" (click)="onSidebarClicked()">
+        <svg class="icon icon-burger">
+          <use
+            xlink:href="/assets/templates/square_template/img/sprite.svg#icon-burger"
+          ></use>
+        </svg></button
+      ><a class="header__logo" href="#"
+        ><img
+          class="header__pic header__pic_black"
+          src="img/logo.svg"
+          alt="" /><img
+          class="header__pic header__pic_white"
+          src="img/logo-white.svg"
+          alt=""
+      /></a>
+      <div class="header__title">Dashboard</div>
+      <div class="header__group">
+        <div class="user-avatar-wrapper mr-3">
+          <div class="user-avatar">
+            <img src="/assets/templates/square_template/img/header-ava.png" />
+          </div>
+          <ul class="user-avatar-dropdown">
+            <li>
+              <a href="#"><i class="fas fa-user-circle mr-1"></i> Profile</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-bell mr-1"></i> Notifications</a>
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fas fa-project-diagram mr-1"></i> Projects</a
+              >
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-cogs mr-1"></i> Settings</a>
+            </li>
+            <li>
+              <a (click)="Logout()"
+                ><i class="fas fa-sign-out-alt mr-1"></i> Signout</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <a class="header__notification active"
+          ><svg class="icon icon-bell">
+            <use
+              xlink:href="/assets/templates/square_template/img/sprite.svg#icon-bell"
+            ></use></svg></a>
+      </div>
+      <div class="header__bg js-header-bg"></div>
+    </div>
+    <div class="page__wrapper">
+      <div class="sidebar js-sidebar">
+        <div class="sidebar__top">
+          <button class="sidebar__close js-sidebar-close">
+            <svg class="icon icon-close">
+              <use xlink:href="img/sprite.svg#icon-close"></use>
+            </svg></button
+          ><a class="sidebar__logo" href="#"
+            ><img
+              class="sidebar__pic sidebar__pic_black"
+              src="img/logo.svg"
+              alt="" /><img
+              class="sidebar__pic sidebar__pic_white"
+              src="img/logo-white.svg"
+              alt=""
+          /></a>
+        </div>
+        <div class="sidebar__wrapper">
+          <a class="sidebar2__profile" routerLink="/admin/users/profile/mudas" >
+            <div class="ava"><img class="ava__pic" src="/assets/templates/square_template/img/header-ava.png" alt="" /></div>
+            <div class="sidebar2__details">
+              <div class="sidebar2__user">Mudasir Ali Nizamani</div>
+              <div class="sidebar2__login">mudasirali</div>
+            </div>
+          </a>
+          <div class="sidebar__teams">
+            <div class="text-muted">DASHBOARD</div>
+          </div>
+          <div class="sidebar__menu">
+            <a class="sidebar__item" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/admin/']" routerLinkActive="active" 
+              ><svg class="icon icon-dashboard">
+                <use
+                  xlink:href="/assets/templates/square_template/img/sprite.svg#icon-dashboard"
+                ></use></svg>Dashboard</a
+            ><a class="sidebar__item" href="#"
+              ><svg class="icon icon-messages">
+                <use
+                  xlink:href="/assets/templates/square_template/img/sprite.svg#icon-messages"
+                ></use></svg>Messages
+              <div class="sidebar__counter">3</div></a
+            >
+            <a class="sidebar__item" [routerLink]="['/admin/users']"  routerLinkActive="active" 
+              ><i class="fas fa-users icon mr-3 text-muted"></i> Users</a
+            >
+            <a class="sidebar__item" href="square-projects.html"
+              ><svg class="icon icon-project">
+                <use
+                  xlink:href="/assets/templates/square_template/img/sprite.svg#icon-project"
+                ></use></svg>Project</a
+            >
+            <div class="sidebar__item">
+              <a class="sidebar__head" href="square-schedule.html"
+                ><svg class="icon icon-schedule">
+                  <use
+                    xlink:href="/assets/templates/square_template/img/sprite.svg#icon-schedule"
+                  ></use></svg>Schedule</a
+              >
+              <div class="sidebar__body">
+                <a class="sidebar__link" href="#"
+                  >In Progress
+                  <div class="sidebar__number">8</div></a
+                ><a class="sidebar__link" href="#"
+                  >Pending
+                  <div class="sidebar__number">2</div></a
+                ><a class="sidebar__link" href="#"
+                  >Completed
+                  <div class="sidebar__number">3</div></a
+                >
+              </div>
+            </div>
+            <a class="sidebar__item" href="square-activity.html"
+              ><svg class="icon icon-activity">
+                <use
+                  xlink:href="/assets/templates/square_template/img/sprite.svg#icon-activity"
+                ></use></svg>Activity</a
+            >
+          </div>
+          <div class="sidebar__teams mt-4">
+            <div class="text-muted">ACCOUNT</div>
+          </div>
+          <div class="sidebar__menu">
+            <a class="sidebar__item" href="square-dashboard.html"
+              ><i class="fas fa-user-circle text-muted mr-3 icon"></i>
+              Profile</a
+            ><a class="sidebar__item" href="#"
+              ><i class="fas fa-bell mr-3 text-muted icon"></i> Notifications
+              <div class="sidebar__counter">3</div></a
+            >
+
+            <a class="sidebar__item" href="#"
+              ><svg class="icon icon-settings">
+                <use
+                  xlink:href="/assets/templates/square_template/img/sprite.svg#icon-settings"
+                ></use></svg>Settings</a
+            >
+
+            <a class="sidebar__item" (click)="Logout()"
+              ><i class="fas fa-sign-out-alt icon text-muted mr-3 icon"></i>
+              Signout
+            </a>
+          </div>
+        </div>
+        <label class="switch switch_theme"
+          ><input class="switch__input js-switch-theme" type="checkbox" /><span
+            class="switch__in"
+            ><span class="switch__box"></span
+            ><span class="switch__icon"
+              ><svg class="icon icon-moon">
+                <use
+                  xlink:href="/assets/templates/square_template/img/sprite.svg#icon-moon"
+                ></use></svg><svg class="icon icon-sun">
+                <use
+                  xlink:href="/assets/templates/square_template/img/sprite.svg#icon-sun"
+                ></use></svg></span></span
+        ></label>
+      </div>
+      <div class="page__container">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>

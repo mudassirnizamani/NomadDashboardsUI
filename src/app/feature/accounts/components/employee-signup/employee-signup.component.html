@@ -9,9 +9,6 @@
   #signupForm="ngForm"
 >
   <div class="entry__fieldset">
-    <h3 class="h3-responsive entry__title" style="text-align: left">
-      Personal Information
-    </h3>
     <div
       class="field1 field1_email js-field"
       [class.error]="
@@ -170,41 +167,6 @@
       </div>
     </div>
 
-    <div class="entry__row">
-      <div class="entry__col">
-        <div
-          class="field1 js-field"
-          [class.error]="Website.invalid && Website.touched"
-        >
-          <div class="field1__label">Website</div>
-          <div class="field1__wrap">
-            <input
-              class="field1__input js-field-input"
-              formControlName="website"
-            />
-          </div>
-          <div
-            class="validation-box"
-            *ngIf="Website.invalid && Website.touched"
-          >
-            <span *ngIf="Website.errors.pattern">plz, enter a valid Url</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="entry__col">
-        <div class="field1 js-field">
-          <div class="field1__label">Position</div>
-          <div class="field1__wrap">
-            <input
-              class="field1__input js-field-input"
-              formControlName="position"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="entry__row entry__row_mobile">
       <div class="entry__col">
         <div
@@ -224,7 +186,8 @@
               <svg class="icon icon-eye">
                 <use
                   xlink:href="/assets/templates/square_template/img/sprite.svg#icon-eye"
-                ></use></svg><span class="field1__line"></span>
+                ></use></svg
+              ><span class="field1__line"></span>
             </button>
           </div>
 
@@ -264,7 +227,8 @@
               <svg class="icon icon-eye">
                 <use
                   xlink:href="/assets/templates/square_template/img/sprite.svg#icon-eye"
-                ></use></svg><span class="field1__line"></span>
+                ></use></svg
+              ><span class="field1__line"></span>
             </button>
           </div>
           <div class="validation-box">
@@ -288,124 +252,6 @@
     </div>
   </div>
 
-  <div class="entry__fieldset">
-    <h3 class="h3-responsive entry__title" style="text-align: left">
-      Company Information
-    </h3>
-    <div class="entry__row">
-      <div class="entry__col">
-        <div
-          class="field1 js-field"
-          [class.error]="
-            (ComponyName.invalid && ComponyName.touched) ||
-            (ComponyName.invalid && signupForm.submitted)
-          "
-        >
-          <div class="field1__label">Compony Name *</div>
-          <div class="field1__wrap">
-            <input
-              class="field1__input js-field-input"
-              formControlName="componyName"
-            />
-          </div>
-          <div
-            class="validation-box"
-            *ngIf="
-              (ComponyName.invalid && ComponyName.touched) ||
-              (ComponyName.invalid && signupForm.submitted)
-            "
-          >
-            <span *ngIf="ComponyName.hasError('required')"
-              >Compony Name is required</span
-            >
-          </div>
-        </div>
-      </div>
-      <div class="entry__col">
-        <div class="field1 js-field">
-          <div class="field1__label">State</div>
-          <div class="field1__wrap">
-            <input
-              class="field1__input js-field-input"
-              formControlName="componyState"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="entry__row">
-      <div class="entry__col">
-        <div class="field1 field1_select js-field">
-          <div class="field1__label">Country</div>
-          <div class="field1__wrap">
-            <select
-              class="field1__select js-field-input"
-              formControlName="country"
-            >
-              <option>USA</option>
-              <option>Canada</option>
-              <option>France</option>
-            </select>
-          </div>
-        </div>
-      </div>
-
-      <div class="entry__col">
-        <div class="field1 js-field">
-          <div class="field1__label">City</div>
-          <div class="field1__wrap">
-            <input
-              class="field1__input js-field-input"
-              formControlName="componyCity"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="entry__row">
-      <div class="entry__col">
-        <div
-          class="field1 js-field"
-          [class.error]="
-            (ComponyAddress.invalid && ComponyAddress.touched) ||
-            (ComponyAddress.invalid && signupForm.submitted)
-          "
-        >
-          <div class="field1__label">Compony Address *</div>
-          <div class="field1__wrap">
-            <input
-              class="field1__input js-field-input"
-              formControlName="componyAddress"
-            />
-          </div>
-          <div
-            class="validation-box"
-            *ngIf="
-              (ComponyAddress.invalid && ComponyAddress.touched) ||
-              (ComponyAddress.invalid && signupForm.submitted)
-            "
-          >
-            <span *ngIf="ComponyAddress.hasError('required')"
-              >Compony Address is required</span
-            >
-          </div>
-        </div>
-      </div>
-
-      <div class="entry__col">
-        <div class="field1 js-field">
-          <div class="field1__label">Zip Code</div>
-          <div class="field1__wrap">
-            <input
-              class="field1__input js-field-input"
-              formControlName="componyZipCode"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   <div class="entry__btns d-flex justify-content-center">
     <button
       mdbBtn
