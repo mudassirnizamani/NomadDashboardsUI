@@ -81,65 +81,66 @@ export class SigninComponent implements OnInit {
 
       this.accountsService.Signin(model).subscribe(
         (res: any) => {
-          this.accountsService.getUserRole(model.UserName).subscribe(
-            (res: any) => {
-              res.forEach((role) => {
-                if (role == 'Employer') {
-                  localStorage.setItem('token', res.token);
-                  localStorage.setItem('userType', 'Employer');
-                  this.SigninForm.reset();
-                  this.toastr.success(
-                    `Successfully signin as ${model.UserName}`,
-                    `Welcome to Client Dashboard`
-                  );
-                  this.router.navigateByUrl('/employer');
-                } else if (role == 'Employee') {
-                  localStorage.setItem('token', res.token);
-                  localStorage.setItem('userType', 'Employee');
-                  this.SigninForm.reset();
-                  this.toastr.success(
-                    `Successfully signin as ${model.UserName}`,
-                    `Welcome to Customer Dashboard`
-                  );
-                  this.router.navigateByUrl('/employee');
-                } else if (role == 'Admin') {
-                  localStorage.setItem('token', res.token);
-                  localStorage.setItem('userType', 'Admin');
-                  this.SigninForm.reset();
-                  this.toastr.success(
-                    `Successfully signin as ${model.UserName}`,
-                    `Welcome to Admin Dashboard`
-                  );
-                  this.router.navigateByUrl('/admin');
-                } else {
-                  this.toastr.error(
-                    `Sorry ${model.UserName}, We didn't found your UserName`,
-                    'Role Not Found'
-                  );
+          console.log(res);
+          if (!res.succeeded && res.code == 'UsernameNotFound') {
+            this.toastr.error(res.description, 'Signin Failed');
+          } else if (!res.succeeded && res.code == 'AccountNotActivated') {
+            this.toastr.error(res.description, 'Signin Failed', {
+              timeOut: 6000,
+            });
+          } else if (!res.succeeded && res.code == 'IncorrectPassword') {
+            this.toastr.error(res.description, 'Signin Failed');
+          } else if (!res.succeeded && res.code == 'InvalidCredentials') {
+            this.toastr.error(res.description, 'Signin Failed');
+          } else if (!res.succeeded && res.code == 'ServerError') {
+            this.toastr.error(res.description, 'Signin Failed');
+          } else if (res.succeeded) {
+            this.accountsService.getUserRole(model.UserName).subscribe(
+              (res: any) => {
+                if (res.succeeded) {
+                  res.roles.forEach((role) => {
+                    if (role == 'Client') {
+                      localStorage.setItem('token', res.token);
+                      localStorage.setItem('userType', 'Client');
+                      this.SigninForm.reset();
+                      this.toastr.success(
+                        `Successfully signin as ${model.UserName}`,
+                        `Welcome to Client Dashboard`
+                      );
+                      this.router.navigateByUrl('/client');
+                    } else if (role == 'Employee') {
+                      localStorage.setItem('token', res.token);
+                      localStorage.setItem('userType', 'Employee');
+                      this.SigninForm.reset();
+                      this.toastr.success(
+                        `Successfully signin as ${model.UserName}`,
+                        `Welcome to Customer Dashboard`
+                      );
+                      this.router.navigateByUrl('/employee');
+                    } else if (role == 'Admin') {
+                      localStorage.setItem('token', res.token);
+                      localStorage.setItem('userType', 'Admin');
+                      this.SigninForm.reset();
+                      this.toastr.success(
+                        `Successfully signin as ${model.UserName}`,
+                        `Welcome to Admin Dashboard`
+                      );
+                      this.router.navigateByUrl('/admin');
+                    } else {
+                      this.toastr.error(
+                        `Sorry ${model.UserName}, We didn't found your Role`,
+                        'Role Not Found'
+                      );
+                    }
+                  });
                 }
-              });
-            },
-            (err: any) => {}
-          );
-        },
-
-        (err: any) => {
-          if (err.status == 400 && err.error.error == 'PASSWORDISINCORRECT') {
-            this.toastr.error(
-              `Password is incorrect for '${model.UserName}'`,
-              'Signin Failed'
+              },
+              (err: any) => {}
             );
-          } else if (
-            err.status == 400 &&
-            err.error.error == 'USERNAMEDOESNOTEXIST'
-          ) {
-            this.toastr.error(
-              `Username '${model.UserName}' doesn't exist`,
-              'Signin Failed'
-            );
-          } else {
-            this.toastr.error("Server didn't respond ", 'Signin Failed !');
           }
+        },
+        (err: any) => {
+          this.toastr.error('Server is Not Responding', 'Signin Failed');
         }
       );
     }
