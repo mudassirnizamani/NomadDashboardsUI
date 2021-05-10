@@ -250,6 +250,7 @@ export class ClientSignupComponent implements OnInit {
         phoneNumber: this.SignupForm.value.phoneNumber,
         website: this.SignupForm.value.website,
         country: this.SignupForm.value.country,
+        profilePic: '',
         answer_1: this.SignupForm.value.answer_1,
         answer_2: this.SignupForm.value.answer_2,
         answer_3: this.SignupForm.value.answer_3,

@@ -27,6 +27,7 @@ export class AccountsService {
       phoneNumber: model.phoneNumber.toString(),
       website: model.website.toString(),
       country: model.country.toString(),
+      profilePic: '/assets/images/users-default-profile-pic.jpg',
       answer_1: model.answer_1.toString(),
       answer_2: model.answer_2.toString(),
       answer_3: model.answer_3.toString(),

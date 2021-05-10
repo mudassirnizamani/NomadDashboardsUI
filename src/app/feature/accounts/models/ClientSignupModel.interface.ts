@@ -11,7 +11,7 @@ export interface ClientSignupModel {
   phoneNumber: string;
   website: string;
   country: string;
-  // profilePic: string;
+  profilePic: string;
   answer_1: string;
   answer_2: string;
   answer_3: string;
