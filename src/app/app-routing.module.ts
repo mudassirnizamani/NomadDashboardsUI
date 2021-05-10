@@ -5,17 +5,20 @@ import { AdminHomeComponent } from './admin/feature/home/home.component';
 import { UserProfileComponent } from './admin/feature/user-profile/user-profile.component';
 import { AdminUsersComponent } from './admin/feature/users/users.component';
 import { AccountsLayoutComponent } from './blocks/layouts/accounts-layout/accounts-layout.component';
-import { EmployerHomeLayoutComponent } from './employer/blocks/layouts/home-layout/home-layout.component';
-import { EmployerSignupComponent } from './feature/accounts/components/employer-signup/employer-signup.component';
-import { SigninComponent } from './feature/accounts/components/signin/signin.component';
-import { SignupComponent } from './feature/accounts/components/signup/signup.component';
 
 // Guards - Mudasir Ali
 import { AdminGuard } from './core/guards/admin/admin.guard';
-import { EmployerGuard } from './core/guards/employer/employer.guard';
-import { EmployeeSignupComponent } from './feature/accounts/components/employee-signup/employee-signup.component';
 import { EmployeeHomeLayoutComponent } from './employee/blocks/layouts/home-layout/home-layout.component';
 import { EmployeeGuard } from './core/guards/employee/employee.guard';
+
+// Accounts Feature Components - Mudasir Ali
+import { ClientSignupComponent } from './feature/accounts/components/client-signup/client-signup.component';
+import { SignupComponent } from './feature/accounts/components/signup/signup.component';
+import { SigninComponent } from './feature/accounts/components/signin/signin.component';
+import { EmployeeSignupComponent } from './feature/accounts/components/employee-signup/employee-signup.component';
+import { ClientHomeLayoutComponent } from './client/blocks/layouts/home-layout/home-layout.component';
+import { ClientGuard } from './core/guards/client/client.guard';
+
 
 const routes: Routes = [
   {
@@ -35,8 +38,8 @@ const routes: Routes = [
         component: SigninComponent,
       },
       {
-        path: 'signup/employer',
-        component: EmployerSignupComponent,
+        path: 'signup/client',
+        component: ClientSignupComponent,
       },
       {
         path: 'signup/employee',
@@ -68,9 +71,9 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'employer',
-    component: EmployerHomeLayoutComponent,
-    canActivate: [EmployerGuard],
+    path: 'client',
+    component: ClientHomeLayoutComponent,
+    canActivate: [ClientGuard],
     children: [],
   },
   {

@@ -29,7 +29,7 @@ export class EmployeeGuard implements CanActivate {
       return true;
     } else {
       this.toastr.warning(
-        'You are not Authorized to access Employee Dashboard',
+        'You are not Authorized to access Customer Dashboard',
         'Not Authorized'
       );
       this.router.navigate(['/signin']);

@@ -15,6 +15,7 @@ export class AdminUsersComponent implements OnInit {
     this.userService.getAllUsers().subscribe(
       (res) => {
         this.allUsersData = res;
+        console.log(res);
       },
       (err) => {
         console.log(err);

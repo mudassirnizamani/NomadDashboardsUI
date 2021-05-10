@@ -5,11 +5,11 @@
 export const environment = {
   production: false,
   envName: 'development',
-  APIBaseUrl: 'https://localhost:5001/api',
+  APIBaseUrl: 'https://localhost:44392/api',
   AccountsUrls: {
     Signup: '/Accounts/Signup',
     Signin: '/Accounts/Signin',
-    EmployerSignup: '/Accounts/Employer/Signup',
+    ClientSignup: '/Accounts/Signup/Client',
     EmployeeSignup: '/Accounts/Employee/Signup'
   },
   UserUrls: {

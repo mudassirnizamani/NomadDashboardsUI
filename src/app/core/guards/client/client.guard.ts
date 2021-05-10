@@ -12,8 +12,9 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class EmployerGuard implements CanActivate {
+export class ClientGuard implements CanActivate {
   constructor(private router: Router, private toastr: ToastrService) {}
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -24,12 +25,12 @@ export class EmployerGuard implements CanActivate {
     | UrlTree {
     if (
       localStorage.getItem('token') != null &&
-      localStorage.getItem('userType') == 'Employer'
+      localStorage.getItem('userType') == 'Client'
     ) {
       return true;
     } else {
       this.toastr.warning(
-        'You are not Authorized to access Employer Dashboard',
+        'You are not Authorized to access Client Dashboard',
         'Not Authorized'
       );
       this.router.navigate(['/signin']);

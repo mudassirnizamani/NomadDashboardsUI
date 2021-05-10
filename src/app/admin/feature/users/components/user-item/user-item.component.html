@@ -15,15 +15,21 @@
   <div class="student__options">
     <div class="student__option">
       <div class="student__category">Active</div>
-      <div class="student__counter text-success"><i class="fas fa-check-circle"></i></div>
+      <div class="student__counter text-success" *ngIf="userData.isActive"><i class="fas fa-check-circle"></i></div>
+      <div class="student__counter text-danger" *ngIf="!userData.isActive"><i class="fas fa-times-circle"></i></div>
+
     </div>
     <div class="student__option">
-      <div class="student__category">Approved</div>
-      <div class="student__counter text-danger"><i class="fas fa-times-circle"></i></div>
+      <div class="student__category">Phone</div>
+      <div class="student__counter text-danger" *ngIf="userData.phoneNumberConfirmed"><i class="fas fa-times-circle"></i></div>
+      <div class="student__counter text-danger" *ngIf="!userData.phoneNumberConfirmed"><i class="fas fa-times-circle"></i></div>
+
     </div>
     <div class="student__option">
-      <div class="student__category">Admin</div>
-      <div class="student__counter text-success"><i class="fas fa-check-circle"></i></div>
+      <div class="student__category">Email</div>
+      <div class="student__counter text-success" *ngIf="userData.emailConfirmed"><i class="fas fa-check-circle"></i></div>
+      <div class="student__counter text-danger" *ngIf="!userData.emailConfirmed"><i class="fas fa-times-circle"></i></div>
+
     </div>
   </div>
   <a

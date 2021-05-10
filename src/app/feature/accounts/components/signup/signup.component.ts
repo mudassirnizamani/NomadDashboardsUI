@@ -19,16 +19,16 @@ export class SignupComponent implements OnInit {
       this.router.navigateByUrl('/admin');
     } else if (
       localStorage.getItem('token') != null &&
-      localStorage.getItem('userType') == 'Employer'
+      localStorage.getItem('userType') == 'Client'
     ) {
       this.toastr.info(`You are already Signed In`, 'Already Signed In');
-      this.router.navigateByUrl('/employer');
+      this.router.navigateByUrl('/client');
     } else if (
       localStorage.getItem('token') != null &&
       localStorage.getItem('userType') == 'Employee'
     ) {
       this.toastr.info(`You are already Signed In`, 'Already Signed In');
-      this.router.navigateByUrl('/admin');
+      this.router.navigateByUrl('/employee');
     }
   }
 }

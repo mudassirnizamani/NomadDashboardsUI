@@ -12,7 +12,7 @@ declare const sidebarToggle: any;
   templateUrl: './home-layout.component.html',
   styleUrls: ['./home-layout.component.scss'],
 })
-export class EmployerHomeLayoutComponent implements OnInit {
+export class ClientHomeLayoutComponent implements OnInit {
   constructor(private router: Router, private toastr: ToastrService) {}
 
   ngOnInit(): void {
@@ -22,7 +22,7 @@ export class EmployerHomeLayoutComponent implements OnInit {
     userMainImgDropdown();
   }
 
-  Logout() {
+  Signout() {
     localStorage.removeItem('token');
     localStorage.removeItem('userType');
     this.toastr.success('You are Successfully Signed out', 'Signed Out');

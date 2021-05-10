@@ -21,4 +21,7 @@ export interface User {
   userName: string;
   website: string;
   zipCode: number;
+  isActive: boolean;
+  lastLoginIp: string;
+  createdAt: string;
 }

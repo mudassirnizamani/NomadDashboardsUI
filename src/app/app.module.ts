@@ -19,15 +19,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AdminModule } from './admin/admin.module';
 import { AdminUsersModule } from './admin/feature/users/users.module';
 import { UserProfileModule } from './admin/feature/user-profile/user-profile.module';
-import { EmployerModule } from './employer/employer.module';
 import { EmployeeModule } from './employee/employee.module';
+import { ClientModule } from './client/client.module';
 
 // Variables - Mudasir Ali
 const CustomModules = [CoreModule, FeatureModule, BlocksModule];
 
 const AdminModules = [AdminModule, AdminUsersModule, UserProfileModule];
 
-const EmployerModules = [EmployerModule];
+const ClientModules = [ClientModule];
 
 const EmployeeModules = [EmployeeModule];
 
@@ -48,7 +48,7 @@ const ThirdPartyModules = [];
     }),
     CustomModules,
     AdminModules,
-    EmployerModules,
+    ClientModules,
     EmployeeModules,
   ],
   providers: [AccountsService, CoreModule],
