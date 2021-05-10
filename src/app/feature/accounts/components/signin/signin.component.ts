@@ -95,12 +95,12 @@ export class SigninComponent implements OnInit {
           } else if (!res.succeeded && res.code == 'ServerError') {
             this.toastr.error(res.description, 'Signin Failed');
           } else if (res.succeeded) {
+            localStorage.setItem('token', res.token);
             this.accountsService.getUserRole(model.UserName).subscribe(
               (res: any) => {
                 if (res.succeeded) {
                   res.roles.forEach((role) => {
                     if (role == 'Client') {
-                      localStorage.setItem('token', res.token);
                       localStorage.setItem('userType', 'Client');
                       this.SigninForm.reset();
                       this.toastr.success(
@@ -109,7 +109,6 @@ export class SigninComponent implements OnInit {
                       );
                       this.router.navigateByUrl('/client');
                     } else if (role == 'Employee') {
-                      localStorage.setItem('token', res.token);
                       localStorage.setItem('userType', 'Employee');
                       this.SigninForm.reset();
                       this.toastr.success(
@@ -118,7 +117,6 @@ export class SigninComponent implements OnInit {
                       );
                       this.router.navigateByUrl('/employee');
                     } else if (role == 'Admin') {
-                      localStorage.setItem('token', res.token);
                       localStorage.setItem('userType', 'Admin');
                       this.SigninForm.reset();
                       this.toastr.success(

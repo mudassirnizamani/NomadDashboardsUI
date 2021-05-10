@@ -28,7 +28,7 @@
       <div class="header__group">
         <div class="user-avatar-wrapper mr-3">
           <div class="user-avatar">
-            <img src="/assets/images/users-default-profile-pic.jpg" />
+            <img src="{{userData.profilePic}}" />
           </div>
           <ul class="user-avatar-dropdown">
             <li>
@@ -79,11 +79,11 @@
           /></a>
         </div>
         <div class="sidebar__wrapper">
-          <a class="sidebar2__profile" routerLink="/admin/users/profile/mudas" >
-            <div class="ava"><img class="ava__pic" src="/assets/templates/square_template/img/header-ava.png" alt="" /></div>
+          <a class="sidebar2__profile" routerLink="/client/profile/{{userData.userName}}" >
+            <div class="ava"><img class="ava__pic" src="{{userData.profilePic}}" alt="" /></div>
             <div class="sidebar2__details">
-              <div class="sidebar2__user">Mudasir Ali Nizamani</div>
-              <div class="sidebar2__login">mudasirali</div>
+              <div class="sidebar2__user">{{userData.firstName}} {{userData.lastName}}</div>
+              <div class="sidebar2__login">{{ userData.userName }}</div>
             </div>
           </a>
           <div class="sidebar__teams">
