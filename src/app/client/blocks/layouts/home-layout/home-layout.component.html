@@ -32,13 +32,13 @@
           </div>
           <ul class="user-avatar-dropdown">
             <li>
-              <a href="#"><i class="fas fa-user-circle mr-1"></i> Profile</a>
+              <a routerLink="/client/profile"><i class="fas fa-user-circle mr-1"></i> Profile</a>
             </li>
             <li>
               <a href="#"><i class="fas fa-bell mr-1"></i> Notifications</a>
             </li>
             <li>
-              <a href="#"
+              <a 
                 ><i class="fas fa-project-diagram mr-1"></i> Projects</a
               >
             </li>
@@ -79,7 +79,7 @@
           /></a>
         </div>
         <div class="sidebar__wrapper">
-          <a class="sidebar2__profile" routerLink="/client/profile/{{userData.userName}}" >
+          <a class="sidebar2__profile" routerLink="/client/profile" >
             <div class="ava"><img class="ava__pic" src="{{userData.profilePic}}" alt="" /></div>
             <div class="sidebar2__details">
               <div class="sidebar2__user">{{userData.firstName}} {{userData.lastName}}</div>

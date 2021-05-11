@@ -18,6 +18,7 @@ import { SigninComponent } from './feature/accounts/components/signin/signin.com
 import { EmployeeSignupComponent } from './feature/accounts/components/employee-signup/employee-signup.component';
 import { ClientHomeLayoutComponent } from './client/blocks/layouts/home-layout/home-layout.component';
 import { ClientGuard } from './core/guards/client/client.guard';
+import { ClientProfileComponent } from './client/feature/profile/profile.component';
 
 
 const routes: Routes = [
@@ -74,7 +75,12 @@ const routes: Routes = [
     path: 'client',
     component: ClientHomeLayoutComponent,
     canActivate: [ClientGuard],
-    children: [],
+    children: [
+      {
+        path: 'profile',
+        component: ClientProfileComponent
+      }
+    ],
   },
   {
     path: 'employee',

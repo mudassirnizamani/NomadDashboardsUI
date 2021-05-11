@@ -20,7 +20,7 @@ export class ClientHomeLayoutComponent implements OnInit {
     private userService: UserService
   ) {}
 
-  userData;
+  userData: any;
 
   ngOnInit(): void {
     // Running JavaScript Functions - Mudasir ALi
@@ -30,7 +30,11 @@ export class ClientHomeLayoutComponent implements OnInit {
 
     this.userService.getUserProfile().subscribe(
       (res: any) => {
-        this.userData = res;
+        if (res.succeeded) {
+          this.userData = res.user;
+        } else if (!res.succeeded) {
+          this.toastr.error(res.description);
+        }
       },
       (err) => {
         this.toastr.error("Server didn't Respond", "Can't Get Profile");
