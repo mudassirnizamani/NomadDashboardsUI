@@ -1,0 +1,89 @@
+<div class="page1__container">
+  <div class="message">
+    <div class="message__inner">
+      <div class="message__head">
+        <button class="message__close js-message-close">
+          <svg class="icon icon-close">
+            <use
+              xlink:href="/assets/templates/square_template/img/sprite.svg#icon-close"
+            ></use>
+          </svg>
+        </button>
+        <div class="message__control">
+          <button class="message__btn js-widget-btn">
+            <svg class="icon icon-archive">
+              <use xlink:href="img/sprite.svg#icon-archive"></use>
+            </svg></button
+          ><button class="message__btn">
+            <svg class="icon icon-forward">
+              <use xlink:href="img/sprite.svg#icon-forward"></use>
+            </svg></button
+          ><button class="message__btn">
+            <svg class="icon icon-trash">
+              <use xlink:href="img/sprite.svg#icon-trash"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="message__wrapper">
+        <div class="message__body">
+          <div class="message__user">
+            <div class="ava">
+              <img class="ava__pic" src="{{ userData.profilePic }}" alt="" />
+            </div>
+            <div class="message__details">
+              <div class="message__man">
+                {{ userData.firstName }} {{ userData.lastName }}
+                <span>| Today, 8:26 AM</span>
+              </div>
+              <div class="message__mail">{{ userData.email }}</div>
+            </div>
+          </div>
+          <div class="message__content">
+            <div class="messaging">
+              <div class="inbox_msg">
+                <div class="mesgs">
+                  <div class="msg_history">
+                    <div class="incoming_msg">
+                      <div class="received_msg">
+                        <div class="received_withd_msg">
+                          <p>
+                            Test which is a new approach to have all solutions
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="outgoing_msg">
+                      <div class="sent_msg">
+                        <p>
+                          Test which is a new approach to have all solutions
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class=""></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="message__foot"></div>
+      <div>
+        <div class="field1 field1_textarea js-field">
+          <div class="field1__wrap">
+            <textarea
+              class="field1__textarea js-field-input"
+              name="message"
+              placeholder="Write a Message"
+            ></textarea>
+          </div>
+        </div>
+        <button class="message__btn btn btn_blue mt-4">Send Message</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

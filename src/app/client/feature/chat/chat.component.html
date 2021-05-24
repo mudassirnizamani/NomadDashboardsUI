@@ -1,0 +1,42 @@
+<div class="messages js-messages">
+  <div class="messages__head">
+    <select class="messages__select">
+      <option>Primary</option>
+      <option>Social</option>
+      <option>Works</option>
+      <option>Promotion</option>
+    </select>
+    <div class="messages__variants">
+      <a class="messages__link purple active" href="#">Primary</a
+      ><a class="messages__link green" href="#">Social</a
+      ><a class="messages__link blue" href="#">Works</a
+      ><a class="messages__link yellow" href="#">Promotion</a>
+    </div>
+    <button class="messages__refresh">
+      <svg class="icon icon-refresh">
+        <!-- <use xlink:href="/assets/templates/square_template/img/sprite.svg#icon-refresh"></use> -->
+      </svg>
+    </button>
+  </div>
+  <div class="messages__wrap">
+    <div *ngFor="let user of allUsersData" class="messages__box">
+      <a
+        class="messages__item active"
+        href="/client/chat/message/{{ user.userName }}"
+      >
+        <div class="ava">
+          <img class="ava__pic" src="{{ user.profilePic }}" alt="" />
+        </div>
+        <div class="messages__detail">
+          <div class="messages__line">
+            <div class="messages__user">
+              {{ user.firstName }} {{ user.lastName }}
+            </div>
+          </div>
+          <div class="messages__place">{{ user.userName }}</div>
+          <div class="messages__text">{{ user.email }}</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

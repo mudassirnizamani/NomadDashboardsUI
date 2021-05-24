@@ -19,7 +19,8 @@ import { EmployeeSignupComponent } from './feature/accounts/components/employee-
 import { ClientHomeLayoutComponent } from './client/blocks/layouts/home-layout/home-layout.component';
 import { ClientGuard } from './core/guards/client/client.guard';
 import { ClientProfileComponent } from './client/feature/profile/profile.component';
-
+import { ClientChatComponent } from './client/feature/chat/chat.component';
+import { ClientChatMessageComponent } from './client/feature/chat/message/message.component';
 
 const routes: Routes = [
   {
@@ -44,8 +45,8 @@ const routes: Routes = [
       },
       {
         path: 'signup/employee',
-        component: EmployeeSignupComponent
-      }
+        component: EmployeeSignupComponent,
+      },
     ],
   },
   {
@@ -78,16 +79,24 @@ const routes: Routes = [
     children: [
       {
         path: 'profile',
-        component: ClientProfileComponent
-      }
+        component: ClientProfileComponent,
+      },
+      {
+        path: 'chat',
+        component: ClientChatComponent,
+      },
+      {
+        path: 'chat/message/:username',
+        component: ClientChatMessageComponent,
+      },
     ],
   },
   {
     path: 'employee',
     component: EmployeeHomeLayoutComponent,
     canActivate: [EmployeeGuard],
-    children: []
-  }
+    children: [],
+  },
 ];
 
 @NgModule({

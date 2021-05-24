@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserService } from './services/user/user.service';
+import { ChatService } from './services/chat/chat.service';
 
 
 @NgModule({
@@ -9,7 +10,8 @@ import { UserService } from './services/user/user.service';
     CommonModule
   ],
   providers: [
-    UserService
+    UserService,
+    ChatService
   ],
 })
 export class CoreModule { }

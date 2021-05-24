@@ -18,7 +18,8 @@ export const environment = {
     GetUserRoles: '/Accounts/GetUserRole/',
     GetUserByUserName: '/Users/GetUserByUserName/',
     AdminUpdateUsers: '/Users/AdminUpdateUser'
-  }
+  },
+  ChatHubUrl: '/chats'
 };
 
 /*
